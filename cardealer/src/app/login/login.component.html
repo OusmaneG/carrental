@@ -1,0 +1,40 @@
+<!-- <p>Login Page</p> -->
+
+<!-- <div class="container">
+    User name : <input type="text" name="username" [(ngModel)]="username">
+    Password : <input type="password" name="password" [(ngModel)]="password"> <br>
+    <button (click)=checkLogin() class="btn btn-success">login</button>
+</div> -->
+
+<div class="bg">
+    <div class="login-wrapper">
+        <div class="card">
+            <div class="card-body">
+                <form class="form-signin">
+                    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                    <mat-form-field>
+                        <mat-label for="inputUsername" class="sr-only">Username</mat-label>
+                        <input  matInput  type="text" id="inputUsername" name="username" 
+                         [(ngModel)]="username" >
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label for="inputPassword" class="sr-only">Password</mat-label>
+                        <input matInput type="password" id="inputPassword" name="password"  
+                        [(ngModel)]="password" required>                        
+                    </mat-form-field>
+                    <div>
+                        <button mat-raised-button (click)=checkLogin() class="btn btn-lg btn-success btn-block" >Sign in</button>
+                    </div>
+                    
+                    
+                    <p class="mt-5 mb-3 text-muted">Saray@Tech Solutions &copy;Oct 2022</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+

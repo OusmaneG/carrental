@@ -1,0 +1,11 @@
+.login-wrapper {
+    margin: 5rem auto;
+    width: 20rem;
+}
+input {
+    margin-bottom: 1rem;
+}
+
+.bg {
+    background-color: rgb(132, 182, 244);
+}

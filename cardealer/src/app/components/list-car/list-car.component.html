@@ -1,0 +1,54 @@
+<nav>
+    <div class="container"> 
+        <div class="search-name">
+            <input class="form-control" type="text" name=" brand" [(ngModel)] = "brand" (ngModelChange) = "Search()" autocomplete="on" 
+            placeholder="Search by brand">
+        </div>
+    </div>
+    <ul *ngFor="let cars of car | filter: brand">
+        <li>
+            <span>{{cars.brand}}</span>
+        </li>
+    </ul>
+</nav>
+
+<h2 style="text-align: center;"> LIST CAR FOR RENT </h2> <br> <br>
+
+<div class="container">
+    <table class="table table-hover">
+        <thead class="table-light">
+            <tr>
+                <th> Id </th>
+                <th> Brand </th>
+                <th> Model </th>
+                <th> Fuel </th>
+                <th> Year </th>
+                <th> Price </th>
+                <th> Image </th>
+                <th> Action </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let car of cars | paginate: {itemsPerPage: 3, currentPage: p}">
+            
+                <td><span> {{ car.id }} </span></td>
+                <td><span> {{ car.brand }} </span></td>
+                <td><span> {{ car.model }} </span></td>
+                <td><span> {{ car.fuel }} </span></td>
+                <td><span> {{ car.year }} </span></td>
+                <td><span> {{ car.price }} </span></td>
+                <td><img src="{{ car.imageUrl }}" width="120px" height="80px" alt=""></td>
+                <td style="height: 50px; width: 30px">                    
+                    <mat-icon (click) = "updateCar(car.id)" color = "primary">edit</mat-icon> 
+                    <mat-icon (click) = "deleteCar(car.id)" color = "danger">delete</mat-icon>
+                    <mat-icon (click) = "carDetails(car.id)" color = "accent">visibility</mat-icon>
+                </td>
+            </tr>
+
+        </tbody>
+        <pagination-controls  previousLabel="Prev" nextLabel = "Next" (pageChange) = "p = $event"></pagination-controls> 
+        <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+    </table>
+</div>
+
+<!-- | paginate: {itemsPerPage: 5, currentPage: p}; -->

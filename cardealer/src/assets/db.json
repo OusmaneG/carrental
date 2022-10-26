@@ -1,0 +1,12 @@
+{
+    "cars": [
+        {
+            "id": 1,
+            "brand": "string",
+            "fuel": "string",
+            "km": 5444,
+            "model": "string",
+            "year": 122
+        }
+    ]
+}
